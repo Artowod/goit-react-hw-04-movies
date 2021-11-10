@@ -1,0 +1,19 @@
+.nav {
+  border: 1px grey solid;
+  box-shadow: 1px 1px grey;
+}
+
+.link {
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px;
+  font-size: 24px;
+}
+
+.link:first-child {
+  margin-left: 40px;
+}
+
+.activeLink {
+  color: tomato;
+}
