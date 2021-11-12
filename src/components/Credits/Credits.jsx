@@ -18,14 +18,13 @@ const Credits = ({ movieId }) => {
 
   return (
     <>
-      Credits
       {readyStatus && credits && (
         <>
           <div className={s.wrapper}>
             {credits.cast &&
               credits.cast.map(actor => {
                 return (
-                  <div className={s.actor}>
+                  <div key={actor.id} className={s.actor}>
                     {actor.profile_path && (
                       <img
                         src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`}

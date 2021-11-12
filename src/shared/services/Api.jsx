@@ -51,6 +51,23 @@ export function getMovieCreditsRequest(id) {
   return response.then(({ data }) => data);
 }
 
+export function getMovieReviewsRequest(id) {
+  const sendParam = {
+    api_key,
+  };
+
+  const response = axios
+    .get(host + endpoint.getMovieDetail + id + '/reviews', {
+      params: sendParam,
+    })
+    .catch(function (error) {
+      console.log(error.toJSON());
+      return Promise.reject(new Error('Not found'));
+    });
+
+  return response.then(({ data }) => data);
+}
+
 //=====================================
 
 //   "api_key": "13b5a298ebf841dea0e3d6624b351e0e",

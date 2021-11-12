@@ -2,7 +2,7 @@
   "api_key": "13b5a298ebf841dea0e3d6624b351e0e",
   "host": "https://api.themoviedb.org/3/",
   "endpoint": {
-    "getTrending": "trending/movie/day",
+    "getTrending": "trending/movie/week",
     "searchMovie": "search/movie",
     "getMovieDetail": "movie/",
     "getMovieCredits": "movie/",
