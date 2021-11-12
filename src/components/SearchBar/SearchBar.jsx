@@ -1,16 +1,18 @@
 import { useState } from 'react';
+import { useLocation, useHistory } from 'react-router-dom';
 import s from './SearchBar.module.css';
-//import PropTypes from 'prop-types';
 
 const SearchBar = () => {
   const [searchInput, setSearchInput] = useState('');
+  const location = useLocation();
+  const history = useHistory();
 
   const onInputChange = e => {
     const { value } = e.target;
     setSearchInput(value);
   };
   const searchHandler = e => {
-    console.log(searchInput);
+    history.push({ ...location, search: `query=${searchInput}` });
   };
 
   return (

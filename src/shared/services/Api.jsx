@@ -68,6 +68,19 @@ export function getMovieReviewsRequest(id) {
   return response.then(({ data }) => data);
 }
 
+export function searchMovie(query) {
+  const sendParam = {
+    api_key,
+    query,
+  };
+
+  const response = axios.get(host + endpoint.searchMovie, {
+    params: sendParam,
+  });
+
+  return response;
+}
+
 //=====================================
 
 //   "api_key": "13b5a298ebf841dea0e3d6624b351e0e",

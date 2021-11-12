@@ -4,12 +4,10 @@ import s from './Reviews.module.css';
 
 const Reviews = ({ movieId }) => {
   const [reviews, setReviews] = useState({});
-  const [readyStatus, setReadyStatus] = useState(false);
 
   useEffect(() => {
     getMovieReviewsRequest(movieId)
       .then(data => data && setReviews(data))
-      .then(setReadyStatus(true))
       .catch(error => {
         console.log('error: ', error);
       });

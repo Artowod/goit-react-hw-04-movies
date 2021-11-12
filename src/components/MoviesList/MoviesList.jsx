@@ -1,15 +1,21 @@
 import s from './MoviesList.module.css';
-import { Link, useRouteMatch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const MoviesList = ({ data }) => {
-  const { url } = useRouteMatch();
-  console.log('Url: ', url);
+const MoviesList = ({ data, prevPageParam }) => {
   return (
     <div className={s.wrapper}>
       <ul>
         {data.map(({ title, id }) => (
           <li className={s.item} key={id}>
-            <Link to={{ pathname: `/movies/${id}` }}> {title} </Link>
+            <Link
+              to={{
+                pathname: `/movies/${id}`,
+                state: { prevPageParam: prevPageParam },
+              }}
+            >
+              {' '}
+              {title}{' '}
+            </Link>
           </li>
         ))}
       </ul>

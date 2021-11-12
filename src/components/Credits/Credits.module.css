@@ -10,3 +10,13 @@
   border: 1px grey solid;
   text-align: center;
 }
+
+.noPic {
+  display: block;
+  border: 1px lightblue solid;
+  background-color: rgb(235, 250, 255);
+  width: 100px;
+  height: 150px;
+  margin: 0 auto;
+  color: rgb(189, 189, 189);
+}

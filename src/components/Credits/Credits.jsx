@@ -25,12 +25,14 @@ const Credits = ({ movieId }) => {
               credits.cast.map(actor => {
                 return (
                   <div key={actor.id} className={s.actor}>
-                    {actor.profile_path && (
+                    {actor.profile_path ? (
                       <img
                         src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`}
                         alt={actor.name}
                         width="100"
                       />
+                    ) : (
+                      <div className={s.noPic}>no pic.</div>
                     )}
                     <p>{actor.name}</p>
                   </div>
