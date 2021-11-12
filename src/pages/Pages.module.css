@@ -1,0 +1,8 @@
+.link {
+  display: block;
+}
+
+.addInfo_wrapper {
+  border-top: 1px gray solid;
+  border-bottom: 1px gray solid;
+}

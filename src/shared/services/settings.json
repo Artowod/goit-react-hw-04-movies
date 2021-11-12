@@ -2,10 +2,10 @@
   "api_key": "13b5a298ebf841dea0e3d6624b351e0e",
   "host": "https://api.themoviedb.org/3/",
   "endpoint": {
-    "getTrending": "trending/movie/day", //https://api.themoviedb.org/3/trending/movie/day?api_key=13b5a298ebf841dea0e3d6624b351e0e
-    "searchMovie": "search/movie", // https://api.themoviedb.org/3/search/movie?api_key=13b5a298ebf841dea0e3d6624b351e0e&language=en-US&page=1&include_adult=false&query=steel
-    "getMovieDetail": "movie/<<id>>", // https://api.themoviedb.org/3/movie/370172?api_key=13b5a298ebf841dea0e3d6624b351e0e&language=en-US
-    "getMovieCredits": "movies/<<id>>/credits/", // https://api.themoviedb.org/3/movie/370172/credits?api_key=13b5a298ebf841dea0e3d6624b351e0e&language=en-US
-    "getMovieReviews": "movies/<<id>>/reviews/" //https://api.themoviedb.org/3/movie/370172/reviews?api_key=13b5a298ebf841dea0e3d6624b351e0e&language=en-US&page=1
+    "getTrending": "trending/movie/day",
+    "searchMovie": "search/movie",
+    "getMovieDetail": "movie/",
+    "getMovieCredits": "movie/",
+    "getMovieReviews": "movie/"
   }
 }

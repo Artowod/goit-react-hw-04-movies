@@ -5,34 +5,33 @@ import s from './SearchBar.module.css';
 const SearchBar = () => {
   const [searchInput, setSearchInput] = useState('');
 
-  const onSubmit = event => {
-    event.preventDefault();
-    //go to the Server !
-    //    onSubmitHandler(searchInput);
-  };
-
   const onInputChange = e => {
     const { value } = e.target;
     setSearchInput(value);
   };
+  const searchHandler = e => {
+    console.log(searchInput);
+  };
 
   return (
     <header className={s.searchBar}>
-      <form className={s.searchForm} onSubmit={onSubmit}>
-        <input
-          className={s.searchForm_input}
-          type="text"
-          autoComplete="off"
-          name="searchInput"
-          value={searchInput}
-          autoFocus
-          placeholder="please type keyword here"
-          onChange={onInputChange}
-        />
-        <button type="submit" className={s.searchForm_button}>
-          Search
-        </button>
-      </form>
+      <input
+        className={s.searchForm_input}
+        type="text"
+        autoComplete="off"
+        name="searchInput"
+        value={searchInput}
+        autoFocus
+        placeholder="please type keyword here"
+        onChange={onInputChange}
+      />
+      <button
+        type="button"
+        className={s.searchForm_button}
+        onClick={searchHandler}
+      >
+        Search
+      </button>
     </header>
   );
 };

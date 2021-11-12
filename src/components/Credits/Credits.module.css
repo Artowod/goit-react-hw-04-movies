@@ -1,0 +1,12 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.actor {
+  margin: 5px;
+  padding: 5px;
+  border: 1px grey solid;
+  text-align: center;
+}

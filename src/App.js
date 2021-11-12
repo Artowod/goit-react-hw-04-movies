@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header';
 import HomePage from './pages/HomePage';
 import MoviesPage from './pages/MoviesPage';
+import MovieDetailsPage from './pages/MovieDetailsPage';
 
 function App() {
   return (
@@ -10,7 +11,10 @@ function App() {
       <Header />
       <Switch>
         <Route path="/" exact component={HomePage} />
-        <Route path="/movies" component={MoviesPage} />
+        <Route path="/movies/:movieId" component={MovieDetailsPage} />
+        <Route path="/movies">
+          <MoviesPage />
+        </Route>
       </Switch>
     </div>
   );

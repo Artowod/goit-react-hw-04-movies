@@ -5,7 +5,7 @@ const MoviesPage = () => {
   return (
     <>
       <SearchBar />
-      <MoviesList name={'Movie from the list'} />
+      <MoviesList data={[]} />
     </>
   );
 };
