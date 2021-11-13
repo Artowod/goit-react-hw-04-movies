@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/pages/Pages.module.css"],"names":[],"mappings":"AAAA,mBACE,aACF,CAEA,8BACE,yBAA0B,CAC1B,4BACF","file":"6.927476e6.chunk.css","sourcesContent":[".link {\r\n  display: block;\r\n}\r\n\r\n.addInfo_wrapper {\r\n  border-top: 1px gray solid;\r\n  border-bottom: 1px gray solid;\r\n}\r\n"]}
