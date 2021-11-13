@@ -1,11 +1,12 @@
 import s from './MoviesList.module.css';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-const MoviesList = ({ data, prevPageParam }) => {
+const MoviesList = ({ moviesData, prevPageParam }) => {
   return (
     <div className={s.wrapper}>
       <ul>
-        {data.map(({ title, id }) => (
+        {moviesData.map(({ title, id }) => (
           <li className={s.item} key={id}>
             <Link
               to={{
@@ -21,6 +22,11 @@ const MoviesList = ({ data, prevPageParam }) => {
       </ul>
     </div>
   );
+};
+
+MoviesList.propTypes = {
+  moviesData: PropTypes.arrayOf(PropTypes.object).isRequired,
+  prevPageParam: PropTypes.string,
 };
 
 export default MoviesList;

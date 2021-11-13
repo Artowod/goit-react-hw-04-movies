@@ -1,30 +1,34 @@
-import s from './MovieDetails.module.css';
+import PropTypes from 'prop-types';
 
-const MovieDetails = ({ params }) => {
+const MovieDetails = ({ movieData }) => {
   return (
     <>
-      {params.backdrop_path && (
+      {movieData.backdrop_path && (
         <img
-          src={`https://image.tmdb.org/t/p/w500${params.backdrop_path}`}
-          alt={params.title}
+          src={`https://image.tmdb.org/t/p/w500${movieData.backdrop_path}`}
+          alt={movieData.title}
           width="500"
         />
       )}
-      <h2>{params.title}</h2>
-      {params.overview && (
+      <h2>{movieData.title}</h2>
+      {movieData.overview && (
         <>
           <h3>Overview</h3>
-          <p> {params.overview}</p>
+          <p> {movieData.overview}</p>
         </>
       )}
-      {params.genres && (
+      {movieData.genres && (
         <>
           <h3> Genres</h3>
-          <p>{params.genres && params.genres.map(item => `${item.name} `)}</p>
+          <p>
+            {movieData.genres && movieData.genres.map(item => `${item.name} `)}
+          </p>
         </>
       )}
     </>
   );
 };
-
+MovieDetails.propTypes = {
+  movieData: PropTypes.object.isRequired,
+};
 export default MovieDetails;

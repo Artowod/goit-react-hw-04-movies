@@ -7,9 +7,6 @@ export function getTrendingRequest() {
     api_key,
   };
 
-  //   sendParam.q = q;
-  //   sendParam.page = page;
-
   const response = axios.get(host + endpoint.getTrending, {
     params: sendParam,
   });

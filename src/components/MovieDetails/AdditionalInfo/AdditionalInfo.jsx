@@ -1,7 +1,8 @@
 import s from './AdditionalInfo.module.css';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-const AdditionalInfo = ({ state, url, movieId }) => {
+const AdditionalInfo = ({ state, url }) => {
   return (
     <>
       <div className={s.addInfo_wrapper}>
@@ -33,6 +34,11 @@ const AdditionalInfo = ({ state, url, movieId }) => {
       </div>
     </>
   );
+};
+
+AdditionalInfo.propTypes = {
+  state: PropTypes.object.isRequired,
+  url: PropTypes.string.isRequired,
 };
 
 export default AdditionalInfo;

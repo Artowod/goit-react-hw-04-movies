@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getMovieCreditsRequest } from '../../shared/services/Api.jsx';
 import s from './Credits.module.css';
+import PropTypes from 'prop-types';
 
 const Credits = ({ movieId }) => {
   const [credits, setCredits] = useState({});
@@ -45,4 +46,7 @@ const Credits = ({ movieId }) => {
   );
 };
 
+Credits.propTypes = {
+  nameId: PropTypes.arrayOf(String),
+};
 export default Credits;

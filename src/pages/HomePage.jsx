@@ -18,7 +18,7 @@ const HomePage = () => {
   return (
     <>
       <h1>Trending today</h1>
-      <MoviesList name={'favorite Movie'} data={gallery} />
+      <MoviesList name={'favorite Movie'} moviesData={gallery} />
     </>
   );
 };

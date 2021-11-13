@@ -9,10 +9,6 @@ import {
 import { useState, useEffect, Suspense, lazy } from 'react';
 import { getMovieDetailRequest } from '../shared/services/Api.jsx';
 import s from './Pages.module.css';
-//import Credits from '../components/Credits/Credits';
-//import Reviews from '../components/Reviews/Reviews';
-//import MovieDetails from '../components/MovieDetails';
-//import AdditionalInfo from '../components/MovieDetails/AdditionalInfo';
 
 const Credits = lazy(() => import('../components/Credits/Credits'));
 const Reviews = lazy(() => import('../components/Reviews/Reviews'));
@@ -50,7 +46,7 @@ const MovieDetailsPage = () => {
       {readyStatus && movie && (
         <>
           <Suspense fallback={<h2> Lodaing...</h2>}>
-            <MovieDetails params={movie} />
+            <MovieDetails movieData={movie} />
 
             <BrowserRouter>
               <AdditionalInfo state={state} url={url} movieId={movieId} />

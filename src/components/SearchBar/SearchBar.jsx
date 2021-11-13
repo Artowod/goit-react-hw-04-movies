@@ -38,8 +38,4 @@ const SearchBar = () => {
   );
 };
 
-// SearchBar.propTypes = {
-//   onSubmitHandler: PropTypes.func.isRequired,
-// };
-
 export default SearchBar;

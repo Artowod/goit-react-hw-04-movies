@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getMovieReviewsRequest } from '../../shared/services/Api.jsx';
 import s from './Reviews.module.css';
+import PropTypes from 'prop-types';
 
 const Reviews = ({ movieId }) => {
   const [reviews, setReviews] = useState({});
@@ -35,6 +36,10 @@ const Reviews = ({ movieId }) => {
       </div>
     </>
   );
+};
+
+Reviews.propTypes = {
+  movieIt: PropTypes.string,
 };
 
 export default Reviews;

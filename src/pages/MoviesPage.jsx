@@ -25,7 +25,7 @@ const MoviesPage = () => {
     <>
       <SearchBar />
       {searchParam && (
-        <MoviesList data={galleryByRequest} prevPageParam={searchParam} />
+        <MoviesList moviesData={galleryByRequest} prevPageParam={searchParam} />
       )}
     </>
   );
