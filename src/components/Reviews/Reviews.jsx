@@ -4,11 +4,11 @@ import s from './Reviews.module.css';
 import PropTypes from 'prop-types';
 
 const Reviews = ({ movieId }) => {
-  const [reviews, setReviews] = useState({});
+  const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     getMovieReviewsRequest(movieId)
-      .then(data => data && setReviews(data))
+      .then(data => data && setReviews(data.results))
       .catch(error => {
         console.log('error: ', error);
       });
@@ -18,12 +18,12 @@ const Reviews = ({ movieId }) => {
   return (
     <>
       <div className={s.wrapper}>
-        {reviews.results && reviews.results.length === 0 ? (
+        {reviews && reviews.length === 0 ? (
           <p>We don`t have any reviews for this movie</p>
         ) : (
           <ul>
-            {reviews.results &&
-              reviews.results.map(({ id, author, content }) => {
+            {reviews &&
+              reviews.map(({ id, author, content }) => {
                 return (
                   <li key={id} className={s.author}>
                     {author && <h3 className={s.author}>Author: {author}</h3>}
@@ -39,7 +39,7 @@ const Reviews = ({ movieId }) => {
 };
 
 Reviews.propTypes = {
-  movieIt: PropTypes.string,
+  movieId: PropTypes.string,
 };
 
 export default Reviews;

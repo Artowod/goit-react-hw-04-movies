@@ -12,11 +12,11 @@ const AdditionalInfo = ({ state, url }) => {
             <Link
               className={s.link}
               to={{
-                pathname: `${url}/credits`,
+                pathname: `${url}/cast`,
                 state: { prevPageParam: state.prevPageParam },
               }}
             >
-              Credits
+              Cast
             </Link>
           </li>
           <li>

@@ -47,6 +47,6 @@ const Credits = ({ movieId }) => {
 };
 
 Credits.propTypes = {
-  nameId: PropTypes.arrayOf(String),
+  movieId: PropTypes.string,
 };
 export default Credits;

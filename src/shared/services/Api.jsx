@@ -7,7 +7,7 @@ export function getTrendingRequest() {
     api_key,
   };
 
-  const response = axios.get(host + endpoint.getTrending, {
+  const response = axios.get(`${host}${endpoint.getTrending}`, {
     params: sendParam,
   });
 
@@ -20,7 +20,7 @@ export function getMovieDetailRequest(id) {
   };
 
   const response = axios
-    .get(host + endpoint.getMovieDetail + id, {
+    .get(`${host}${endpoint.getMovieDetail}${id}`, {
       params: sendParam,
     })
     .catch(function (error) {
@@ -37,7 +37,7 @@ export function getMovieCreditsRequest(id) {
   };
 
   const response = axios
-    .get(host + endpoint.getMovieDetail + id + '/credits', {
+    .get(`${host}${endpoint.getMovieDetail}${id}/credits`, {
       params: sendParam,
     })
     .catch(function (error) {
@@ -54,7 +54,7 @@ export function getMovieReviewsRequest(id) {
   };
 
   const response = axios
-    .get(host + endpoint.getMovieDetail + id + '/reviews', {
+    .get(`${host}${endpoint.getMovieDetail}${id}/reviews`, {
       params: sendParam,
     })
     .catch(function (error) {
@@ -71,7 +71,7 @@ export function searchMovie(query) {
     query,
   };
 
-  const response = axios.get(host + endpoint.searchMovie, {
+  const response = axios.get(`${host}${endpoint.searchMovie}`, {
     params: sendParam,
   });
 

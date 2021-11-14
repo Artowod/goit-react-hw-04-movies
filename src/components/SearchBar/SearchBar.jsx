@@ -14,6 +14,10 @@ const SearchBar = () => {
   const searchHandler = e => {
     history.push({ ...location, search: `query=${searchInput}` });
   };
+  const onKeyPress = e => {
+    e.key === 'Enter' &&
+      history.push({ ...location, search: `query=${searchInput}` });
+  };
 
   return (
     <header className={s.searchBar}>
@@ -23,9 +27,9 @@ const SearchBar = () => {
         autoComplete="off"
         name="searchInput"
         value={searchInput}
-        autoFocus
         placeholder="please type keyword here"
         onChange={onInputChange}
+        onKeyPress={onKeyPress}
       />
       <button
         type="button"

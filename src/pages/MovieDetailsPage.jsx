@@ -51,7 +51,7 @@ const MovieDetailsPage = () => {
             <BrowserRouter>
               <AdditionalInfo state={state} url={url} movieId={movieId} />
 
-              <Route path="/movies/:movieId/credits" exact>
+              <Route path="/movies/:movieId/cast" exact>
                 <Credits movieId={movieId} />
               </Route>
               <Route path="/movies/:movieId/reviews" exact>

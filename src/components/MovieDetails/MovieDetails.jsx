@@ -1,34 +1,39 @@
 import PropTypes from 'prop-types';
 
-const MovieDetails = ({ movieData }) => {
+const MovieDetails = ({
+  movieData: { backdrop_path, title, overview, genres },
+}) => {
   return (
     <>
-      {movieData.backdrop_path && (
+      {backdrop_path && (
         <img
-          src={`https://image.tmdb.org/t/p/w500${movieData.backdrop_path}`}
-          alt={movieData.title}
+          src={`https://image.tmdb.org/t/p/w500${backdrop_path}`}
+          alt={title}
           width="500"
         />
       )}
-      <h2>{movieData.title}</h2>
-      {movieData.overview && (
+      <h2>{title}</h2>
+      {overview && (
         <>
           <h3>Overview</h3>
-          <p> {movieData.overview}</p>
+          <p> {overview}</p>
         </>
       )}
-      {movieData.genres && (
+      {genres && (
         <>
           <h3> Genres</h3>
-          <p>
-            {movieData.genres && movieData.genres.map(item => `${item.name} `)}
-          </p>
+          <p>{genres && genres.map(item => `${item.name} `)}</p>
         </>
       )}
     </>
   );
 };
 MovieDetails.propTypes = {
-  movieData: PropTypes.object.isRequired,
+  movieData: PropTypes.shape({
+    backdrop_path: PropTypes.string,
+    title: PropTypes.string,
+    overview: PropTypes.string,
+    genres: PropTypes.array,
+  }).isRequired,
 };
 export default MovieDetails;
