@@ -13,7 +13,10 @@ const AdditionalInfo = ({ state, url }) => {
               className={s.link}
               to={{
                 pathname: `${url}/cast`,
-                state: { prevPageParam: state.prevPageParam },
+                state:
+                  state && state.prevPageParam
+                    ? { prevPageParam: state.prevPageParam }
+                    : { prevPageParam: '/' },
               }}
             >
               Cast
@@ -24,7 +27,10 @@ const AdditionalInfo = ({ state, url }) => {
               className={s.link}
               to={{
                 pathname: `${url}/reviews`,
-                state: { prevPageParam: state.prevPageParam },
+                state:
+                  state && state.prevPageParam
+                    ? { prevPageParam: state.prevPageParam }
+                    : { prevPageParam: '/' },
               }}
             >
               Reviews

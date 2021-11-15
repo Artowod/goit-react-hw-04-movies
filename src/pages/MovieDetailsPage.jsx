@@ -38,7 +38,11 @@ const MovieDetailsPage = () => {
     <>
       <Link
         className={s.link}
-        to={state.prevPageParam ? `/movies?query=${state.prevPageParam}` : '/'}
+        to={
+          state && state.prevPageParam
+            ? `/movies?query=${state.prevPageParam}`
+            : '/'
+        }
       >
         Back
       </Link>
